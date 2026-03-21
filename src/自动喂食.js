@@ -1,6 +1,6 @@
 const FLAG = "自动喂食_1"
 
-const { runSingleRepeat } = require('./Mylib.js');
+const { runSingleRepeat } = require('../libs/Mylib.js');
 
 function main(){
     ls = World.getEntities(5, "minecraft:allay")

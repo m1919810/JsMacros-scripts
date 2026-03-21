@@ -1,6 +1,6 @@
 const FLAG = "唱片_1"
 
-const { runSingleLocked } = require('./Mylib.js');
+const { runSingleLocked } = require('../libs/Mylib.js');
 function runOnce(){
     if(Player.openInventory().getContainerTitle() == "终极工作台"){
         Player.openInventory().click(7)

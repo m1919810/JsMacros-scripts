@@ -3,8 +3,8 @@ const COMMON_TITLE = "合成"
 const NULL_TITLE = ""
 const MAX_COUNT = 24
 const ROWS = 3;
-const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getItemNameInSlot, waitUntilMenuChange, getTargetBlock, getNearbyBlock, getHotbarSlot, autoStack, ArrayStream } = require('./Mylib.js');
-const { getPos, isMatureNetherWart, getThisPlayerPos, breakBlock, placeBlock } = require('./Worldlib.js')
+const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getItemNameInSlot, waitUntilMenuChange, getTargetBlock, getNearbyBlock, getHotbarSlot, autoStack, ArrayStream } = require('../libs/Mylib.js');
+const { getPos, isMatureNetherWart, getThisPlayerPos, breakBlock, placeBlock } = require('../libs/Worldlib.js')
 function getAndMoveOne(SlotA,SlotB){
     Player.openInventory().click(SlotA,0) ;
     Player.openInventory().click(SlotB,1) ;

@@ -12,7 +12,7 @@ const NAME = "钻石"
 const NAMEBLOCK = "钻石块"
 
 var playert = (World.getEntities(0.5, ["minecraft:player"]))[0]
-const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getIdAndMoveRange, getItemNameInSlot, waitUntilMenuChange } = require('./Mylib.js');
+const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getIdAndMoveRange, getItemNameInSlot, waitUntilMenuChange } = require('../libs/Mylib.js');
 const HAND_ITEM = "minecraft:soul_sand"
 var scanlist = []
 Chat.log("start scan ")

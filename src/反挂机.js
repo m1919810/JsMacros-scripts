@@ -1,6 +1,6 @@
 const FLAG = "反挂机_1"
 
-const { runSingleRepeat } = require('./Mylib.js');
+const { runSingleRepeat } = require('../libs/Mylib.js');
 origin_yaw = Player.getPlayer().getYaw()
 origin_pitch = Player.getPlayer().getPitch()
 const ANGLE_RANGE = 50

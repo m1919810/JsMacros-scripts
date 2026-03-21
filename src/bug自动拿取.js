@@ -1,8 +1,8 @@
 
 const COMMON_TITLE = "合成"
 const NULL_TITLE = ""
-const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getItemNameInSlot, waitUntilMenuChange, getTargetBlock, getNearbyBlock, getHotbarSlot, autoStack, ArrayStream } = require('./Mylib.js');
-const { getPos, isMatureNetherWart, getThisPlayerPos, breakBlock, placeBlock } = require('./Worldlib.js')
+const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getItemNameInSlot, waitUntilMenuChange, getTargetBlock, getNearbyBlock, getHotbarSlot, autoStack, ArrayStream } = require('../libs/Mylib.js');
+const { getPos, isMatureNetherWart, getThisPlayerPos, breakBlock, placeBlock } = require('../libs/Worldlib.js')
 
 while(true){
     if (Player.getCurrentPlayerInput().sneaking == true) {

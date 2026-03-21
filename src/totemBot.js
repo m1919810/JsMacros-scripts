@@ -132,6 +132,6 @@ const { getItemIdInSlot,
 getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, 
 waitUntilOpen, DebugLogger, getItemCountInSlot, getItemNameInSlot,
  waitUntilMenuChange,getTargetBlock,getNearbyBlock,getHotbarSlot, autoStack, 
- ArrayStream, runSingleRepeat, runSingleLocked } = require('./Mylib.js');
+ ArrayStream, runSingleRepeat, runSingleLocked } = require('../libs/Mylib.js');
 
 runSingleRepeat(main, FLAG)

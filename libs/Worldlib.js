@@ -1,4 +1,4 @@
-const {getTargetBlock, getNearbyBlock,getThisPlayer } = require('./Mylib.js');
+const {getTargetBlock, getNearbyBlock,getThisPlayer } = require('../libs/Mylib.js');
 class PosBuilder{
     constructor(pos){
         this.pos=pos 

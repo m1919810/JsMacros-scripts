@@ -1,5 +1,5 @@
 
-const { runSingleRepeat } = require('./Mylib.js');
+const { runSingleRepeat } = require('../libs/Mylib.js');
 const FLAG = "SNEAK_1"
 const COMMON_TITLE= "合成"
 const STOP_TITLE="网络吸尘器"

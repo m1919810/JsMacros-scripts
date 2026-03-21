@@ -15,7 +15,7 @@ function remap(i){
     }
     else return MAP[8]
 }
-const { getIdSlot,getAndMoveMulti ,checkTitle, getIdAndMove, getIdAndMoveRange} = require('./Mylib.js');
+const { getIdSlot,getAndMoveMulti ,checkTitle, getIdAndMove, getIdAndMoveRange} = require('../libs/Mylib.js');
 
 
 function mainAction(){

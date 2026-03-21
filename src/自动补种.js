@@ -1,5 +1,5 @@
-const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getItemNameInSlot, waitUntilMenuChange,getTargetBlock,getNearbyBlock,getHotbarSlot, autoStack, ArrayStream, runSingleRepeat } = require('./Mylib.js');
-const { getPos,isMatureNetherWart,getThisPlayerPos,breakBlock,placeBlock } =require('./Worldlib.js')
+const { getItemIdInSlot, getIdSlot, getAndMoveMulti, checkTitle, getIdAndMove, getIndexAndMove, waitUntilOpen, DebugLogger, getItemCountInSlot, getItemNameInSlot, waitUntilMenuChange,getTargetBlock,getNearbyBlock,getHotbarSlot, autoStack, ArrayStream, runSingleRepeat } = require('../libs/Mylib.js');
+const { getPos,isMatureNetherWart,getThisPlayerPos,breakBlock,placeBlock } =require('../libs/Worldlib.js')
 const INVERSED_CLICK = 0
 Chat.log("scan Block:")
 var blockv = Player.interactions().getTargetedBlock()
