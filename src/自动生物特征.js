@@ -1,5 +1,5 @@
 // 通过快捷键触发
-const { runSingleRepeat, checkTitle } = require('./Mylib.js');
+const { runSingleRepeat, checkTitle } = require('../libs/Mylib.js');
 const FLAG = "自动生物特征"
 block = Player.interactions().getTargetedBlock()
 if(block != null){

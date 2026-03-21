@@ -1,5 +1,5 @@
 
-const { runSingleRepeat, checkTitle } = require('./Mylib.js');
+const { runSingleRepeat, checkTitle } = require('../libs/Mylib.js');
 
 const EXP_REG = new RegExp("^(\\d*) 级经验$");
 const FLAG = "自动解锁_1";
