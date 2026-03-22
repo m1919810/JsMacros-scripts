@@ -4,13 +4,19 @@ const { runSingleRepeat, checkTitle } = require('../libs/Mylib.js');
 const EXP_REG = new RegExp("^(\\d*) 级经验$");
 const FLAG = "自动解锁_1";
 
-function main(){
-    for(var i = 0 ; i < 9 ; ++i){
-        PacketHelper.sendInteractItem(false)
-    }
+const GROUPS = ["基础机器"]
+index = 0
+function findGroup(){
     
-    Client.waitTick(2)
-    if(checkTitle("Slimefun 指南")){
+}
+
+function main(){
+    // for(var i = 0 ; i < 9 ; ++i){
+    //     PacketHelper.sendInteractItem(false)
+    // }
+    
+    Client.waitTick(20)
+    if(checkTitle("Slimefun 指南") || checkTitle("粘液科技")){
 
         lv = Player.getPlayer().getXPLevel()
         lst = []
@@ -47,12 +53,16 @@ function main(){
                 Player.openInventory().click(argmin, 0)
             }
         }else{
-            if(Player.openInventory().getSlot(52).getItemId() == "minecraft:lime_stained_glass_pane"){
-                //Player.openInventory().click(52, 0)
-                //Chat.log("Switch Page")
-            }else{
-                //Chat.log("All Finished")
+            if(ItemStackUtils.getSfId(Player.openInventory().getSlot(1).getRaw()) == "_UI_BACK"){
+                if(Player.openInventory().getSlot(52).getItemId() == "minecraft:lime_stained_glass_pane"){
+                    Player.openInventory().click(52, 0)
+                    Chat.log("Switch Page")
+                }else{
+                    Player.openInventory().click(1, 0)
+                    Chat.log("All Finished")
+                }
             }
+            
         }
 
 
