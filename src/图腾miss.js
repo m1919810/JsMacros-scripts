@@ -99,7 +99,7 @@ friendlist = [
     "樱羽艾玛", 
     "Sherii_Kawaii",
     "wuzhuan",
-    "_Plckaxe_"
+    "_Plckaxe_","zuogeren"
 ]
 sleep_unit = 1
 function isTarget(player){
@@ -212,7 +212,7 @@ function main(){
             Client.runOnMainThread(JavaWrapper.methodToJava(()=>{
                 try{
                 PacketHelper.sendInventoryPacket(idx, selected, "swap")
-                height = [40]
+                height = [10]
                 //reset height or see if can cause mace attack
                 //should we?
                 //Player.getPlayer().attack(player)
