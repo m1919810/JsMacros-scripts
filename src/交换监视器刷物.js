@@ -1,7 +1,7 @@
 
 
 
-if(Player.openInventory().getContainerTitle().startsWith("网络量子存储") && Player.openInventory().getHeld().getItemId() == "minecraft:air" && KeyBind.getPressedKeys().contains("key.keyboard.left.control") ){
+if(Player.openInventory().getContainerTitle().startsWith("网络量子存储") && KeyBind.getPressedKeys().contains("key.keyboard.left.control") ){
     entities = World.getEntities(5, "minecraft:item_frame")
     if(entities.length > 0 && Player.openInventory().getSlot(1).getItemId() != "minecraft:air"){
         entity = entities[0]
