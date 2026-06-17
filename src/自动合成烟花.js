@@ -4,6 +4,7 @@ function quickTo(id, slot ){
     for(var i = slot; i < slot + 36; ++i){
         var it = Player.openInventory().getSlot(i)
         if(it.getItemId() == id){
+            PacketHelper.sendInventoryPacket(i, 0, "quick_move")
             Player.openInventory().quick(i)
             return true;
         }
@@ -12,7 +13,8 @@ function quickTo(id, slot ){
 }
 
 function run(){
-    if(ScreenUtils.hasAltDown()){
+    if(InputHelper.hasAltDown()){
+        Chat.log("1234")
         if(checkTitle("合成")){
             type = ScreenHelper.getScreenName(Player.openInventory().getRawContainer())
             slot = 0;
@@ -32,15 +34,20 @@ function run(){
                        pap_num += Player.openInventory().getSlot(i).getCount()
                     }
                 }
+                Chat.log("12334")
                 craft_pap :{
                     if(can_num >= 192){
-                         for(let i = 0 ; i < 3; ++i){
+                        // clear items
+                        
+                        for(let i = 1 ; i < 4; ++i){
                             if(Player.openInventory().getSlot(i).getCount() > 0){
 
                                 Player.openInventory().quick(i)
                             }
                         }
-                        for(let i = 0 ;  i< 3; ++i){
+                        while(can_num >= 192){
+                            can_num -= 192
+                            for(let i = 1 ;  i< 4; ++i){
                             
                             while(true){
                                 var it = Player.openInventory().getSlot(i)
@@ -54,28 +61,45 @@ function run(){
                                     break
                                 }
                             }
-                        }
-                        if(Player.openInventory().getSlot(3).getCount() > 0){
+                            }
+                            if(Player.openInventory().getSlot(3).getCount() > 0){
 
-                            Player.openInventory().quick(3)
+                                Player.openInventory().quick(3)
+                            }
+                            Player.openInventory().quick(0)
+                             var slot = ScreenHelper.getScreenSlots(Player.openInventory().getRawContainer())
+                            for(var i = 0 ; i < 10; ++i){
+                                ScreenHelper.setSlotItem(slot.get(i), ItemStackHelper.loadItemFromMap({}))
+                            }
                         }
-                        Player.openInventory().quick(9)
+                        
+                    
+
+                        Client.waitTick(10)
                     }
+                
                 }
+                
                 craft_fire:{
                     if(gun_num >= 192 && pap_num >= 64){
+                        Chat.log(gun_num + " " + pap_num)
+                        // clear items
                         //add count     
-                        for(let i = 0 ; i < 3; ++i){
+                        for(let i = 1 ; i < 5; ++i){
                             if(Player.openInventory().getSlot(i).getCount() > 0){
 
                                 Player.openInventory().quick(i)
                             }
                         }
-                        for(let i = 0 ;  i< 3; ++i){
-                            
-                            while(true){
+                        while(gun_num >= 192 && pap_num >= 64){
+                            gun_num -= 192
+                            pap_num -=64
+                            for(let i = 1 ;  i< 4; ++i){
+                            for(var bb = 0 ; bb < 100; ++bb){
                                 var it = Player.openInventory().getSlot(i)
                                 if(it.getCount() < 64){
+                                    Chat.log(it)
+                                    
                                     if(quickTo("minecraft:gunpowder", start)){
                                         
                                     }else{
@@ -85,29 +109,39 @@ function run(){
                                     break
                                 }
                             }
-                        }
-                        if(Player.openInventory().getSlot(3).getCount() > 0){
+                            }
+                            if(Player.openInventory().getSlot(4).getCount() > 0){
 
-                            Player.openInventory().quick(3)
-                        }
-                        while(true){
-                            var it = Player.openInventory().getSlot(3)
-                            if(it.getCount() < 64){
-                                if(quickTo("minecraft:paper", start)){
-                                    
+                                Player.openInventory().quick(4)
+                            }
+                            while(true){
+                                var it = Player.openInventory().getSlot(4)
+                                if(it.getCount() < 64){
+                                    if(quickTo("minecraft:paper", start)){
+                                        
+                                    }else{
+                                        break craft_fire
+                                    }
                                 }else{
-                                    break craft_fire
+                                    break
                                 }
-                            }else{
-                                break
+                            }
+                            if(Player.openInventory().getSlot(5).getCount() > 0){
+                                Player.openInventory().quick(5)
+                            }
+                            
+                            Player.openInventory().quick(0)
+                            var slot = ScreenHelper.getScreenSlots(Player.openInventory().getRawContainer())
+                            for(var i = 0 ; i < 10; ++i){
+                                ScreenHelper.setSlotItem(slot.get(i), ItemStackHelper.loadItemFromMap({}))
                             }
                         }
-                        if(Player.openInventory().getSlot(4).getCount() > 0){
+                        
+                        Client.waitTick(10)
 
-                        Player.openInventory().quick(4)
-                        }
-                        Player.openInventory().quick(9)
-                        }
+                
+                    
+                    }
                     
                 }
                
