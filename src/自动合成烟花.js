@@ -20,42 +20,95 @@ function run(){
             if(type == "Crafting Table"){
                 slot = 10
                 start = 10
-                craft:{
-                    for(let i = 0 ;  i< 3; ++i){
+                can_num = 0
+                gun_num = 0 
+                pap_num = 0
+                for(var i = start; i < start + 36; ++i){
+                    if(Player.openInventory().getSlot(i).getItemId() == "minecraft:sugar_cane" ){
+                        can_num += Player.openInventory().getSlot(i).getCount()
+                    }else if( Player.openInventory().getSlot(i).getItemId() == "minecraft:gun_powder" ){
+                        gun_num += Player.openInventory().getSlot(i).getCount()
+                    }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:paper"){
+                       pap_num += Player.openInventory().getSlot(i).getCount()
+                    }
+                }
+                craft_pap :{
+                    if(can_num >= 192){
+                         for(let i = 0 ; i < 3; ++i){
+                            if(Player.openInventory().getSlot(i).getCount() > 0){
+
+                                Player.openInventory().quick(i)
+                            }
+                        }
+                        for(let i = 0 ;  i< 3; ++i){
+                            
+                            while(true){
+                                var it = Player.openInventory().getSlot(i)
+                                if(it.getCount() < 64){
+                                    if(quickTo("minecraft:sugar_cane", start)){
+                                        
+                                    }else{
+                                        break craft_pap
+                                    }
+                                }else{
+                                    break
+                                }
+                            }
+                        }
+                        if(Player.openInventory().getSlot(3).getCount() > 0){
+
+                            Player.openInventory().quick(3)
+                        }
+                        Player.openInventory().quick(9)
+                    }
+                }
+                craft_fire:{
+                    if(gun_num >= 192 && pap_num >= 64){
+                        //add count     
+                        for(let i = 0 ; i < 3; ++i){
+                            if(Player.openInventory().getSlot(i).getCount() > 0){
+
+                                Player.openInventory().quick(i)
+                            }
+                        }
+                        for(let i = 0 ;  i< 3; ++i){
+                            
+                            while(true){
+                                var it = Player.openInventory().getSlot(i)
+                                if(it.getCount() < 64){
+                                    if(quickTo("minecraft:gun_powder", start)){
+                                        
+                                    }else{
+                                        break craft_fire
+                                    }
+                                }else{
+                                    break
+                                }
+                            }
+                        }
+                        if(Player.openInventory().getSlot(3).getCount() > 0){
+
+                            Player.openInventory().quick(3)
+                        }
                         while(true){
-                            var it = Player.openInventory().getSlot(i)
+                            var it = Player.openInventory().getSlot(3)
                             if(it.getCount() < 64){
-                                if(quickTo("minecraft:gun_powder", start)){
+                                if(quickTo("minecraft:paper", start)){
                                     
                                 }else{
-                                    break craft
+                                    break craft_fire
                                 }
                             }else{
                                 break
                             }
                         }
-                    }
-                    if(Player.openInventory().getSlot(3).getCount() > 0){
+                        if(Player.openInventory().getSlot(4).getCount() > 0){
 
-                    Player.openInventory().quick(3)
-                    }
-                    while(true){
-                        var it = Player.openInventory().getSlot(3)
-                        if(it.getCount() < 64){
-                            if(quickTo("minecraft:paper", start)){
-                                
-                            }else{
-                                break craft
-                            }
-                        }else{
-                            break
+                        Player.openInventory().quick(4)
                         }
-                    }
-                     if(Player.openInventory().getSlot(4).getCount() > 0){
-
-                     Player.openInventory().quick(4)
-                    }
-                    Player.openInventory().quick(9)
+                        Player.openInventory().quick(9)
+                        }
+                    
                 }
                
             }
@@ -95,7 +148,7 @@ function run(){
                 }
             }
         }
-        Client.waitTick(10)
+        Client.waitTick(2)
     }
     Client.waitTick(1)
     
