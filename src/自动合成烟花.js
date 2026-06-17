@@ -136,14 +136,14 @@ function run(){
             need_gun = (expected_gun - gun_slot) * 64
             for(var re = 0; re < size; ++re){
         
-                if(Player.openInventory().getSlot(i).getItemId() == "minecraft:gun_powder" && need_gun > 0){
-                    cnt = Player.openInventory().getSlot(i).getCount()
-                    Player.openInventory().quick(i)
+                if(Player.openInventory().getSlot(re).getItemId() == "minecraft:gun_powder" && need_gun > 0){
+                    cnt = Player.openInventory().getSlot(re).getCount()
+                    Player.openInventory().quick(re)
                     need_gun -= cnt
                 }
-                if(Player.openInventory().getSlot(i).getItemId() == "minecraft:paper" && need_paper > 0){
-                    cnt = Player.openInventory().getSlot(i).getCount()
-                    Player.openInventory().quick(i)
+                if(Player.openInventory().getSlot(re).getItemId() == "minecraft:paper" && need_paper > 0){
+                    cnt = Player.openInventory().getSlot(re).getCount()
+                    Player.openInventory().quick(re)
                     need_paper -= cnt
                 }
             }
