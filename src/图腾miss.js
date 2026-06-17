@@ -3,7 +3,7 @@ Consts.importConstantToContext(context)
 
 function inNoPvpArea(player){
     pos = player.getPos();
-    return pos.x > -10 && pos.x < 10 && pos.y >90 && pos.y < 110 && pos.z > -10 && pos.z < 10 && 
+    return pos.x >= -25 && pos.x <= 25 && pos.z >= -25 && pos.z <= 25 && 
     World.getDimension() == "minecraft:overworld"
 }
 function Sq(pos){
@@ -154,6 +154,7 @@ function main(){
         playerI= players[i]
         //do not attack same target, unless
         if(playerI.isAlive() && !playerI.equals( Player.getPlayer()) && isTarget(playerI) 
+        && !inNoPvpArea(playerI)
         //&& playerI.getPlayerName() != lastTarget
         ){
             player = playerI;
@@ -212,7 +213,7 @@ function main(){
             Client.runOnMainThread(JavaWrapper.methodToJava(()=>{
                 try{
                 PacketHelper.sendInventoryPacket(idx, selected, "swap")
-                height = [10]
+                height = [20, 40, 60]
                 //reset height or see if can cause mace attack
                 //should we?
                 //Player.getPlayer().attack(player)
