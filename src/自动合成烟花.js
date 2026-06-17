@@ -128,6 +128,8 @@ function run(){
                 }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:paper"){
                     empty_slot += 1
                     paper_slot += 1
+                }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:firework_rocket"){
+                    Player.openInventory().quick(i)
                 }
             }
             expect_paper = empty_slot / 4
@@ -147,6 +149,7 @@ function run(){
                     need_paper -= cnt
                 }
             }
+            
         }
         Client.waitTick(2)
     }
