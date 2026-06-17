@@ -159,7 +159,7 @@ function run(){
                 }else if( Player.openInventory().getSlot(i).getItemId() == "minecraft:gunpowder" ){
                     empty_slot += 1
                     gun_slot += 1
-                }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:paper" || Player.openInventory().getSlot(i).getItemId() == "minecraft:sugar_caner"){
+                }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:paper" || Player.openInventory().getSlot(i).getItemId() == "minecraft:sugar_cane"){
                     empty_slot += 1
                     paper_slot += 1
                 }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:firework_rocket"){
