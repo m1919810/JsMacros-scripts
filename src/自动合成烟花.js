@@ -62,9 +62,9 @@ function run(){
                                 }
                             }
                             }
-                            if(Player.openInventory().getSlot(3).getCount() > 0){
+                            if(Player.openInventory().getSlot(4).getCount() > 0){
 
-                                Player.openInventory().quick(3)
+                                Player.openInventory().quick(4)
                             }
                             Player.openInventory().quick(0)
                              var slot = ScreenHelper.getScreenSlots(Player.openInventory().getRawContainer())
