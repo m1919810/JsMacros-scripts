@@ -14,7 +14,7 @@ function quickTo(id, slot ){
 
 function run(){
     if(InputHelper.hasAltDown()){
-        Chat.log("1234")
+
         if(checkTitle("合成")){
             type = ScreenHelper.getScreenName(Player.openInventory().getRawContainer())
             slot = 0;
@@ -34,7 +34,7 @@ function run(){
                        pap_num += Player.openInventory().getSlot(i).getCount()
                     }
                 }
-                Chat.log("12334")
+               
                 craft_pap :{
                     if(can_num >= 192){
                         // clear items
@@ -82,7 +82,7 @@ function run(){
                 
                 craft_fire:{
                     if(gun_num >= 192 && pap_num >= 64){
-                        Chat.log(gun_num + " " + pap_num)
+                      
                         // clear items
                         //add count     
                         for(let i = 1 ; i < 5; ++i){
@@ -98,7 +98,7 @@ function run(){
                             for(var bb = 0 ; bb < 100; ++bb){
                                 var it = Player.openInventory().getSlot(i)
                                 if(it.getCount() < 64){
-                                    Chat.log(it)
+                                 
                                     
                                     if(quickTo("minecraft:gunpowder", start)){
                                         
@@ -159,7 +159,7 @@ function run(){
                 }else if( Player.openInventory().getSlot(i).getItemId() == "minecraft:gunpowder" ){
                     empty_slot += 1
                     gun_slot += 1
-                }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:paper"){
+                }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:paper" || Player.openInventory().getSlot(i).getItemId() == "minecraft:sugar_caner"){
                     empty_slot += 1
                     paper_slot += 1
                 }else if(Player.openInventory().getSlot(i).getItemId() == "minecraft:firework_rocket"){
@@ -176,7 +176,7 @@ function run(){
                     Player.openInventory().quick(re)
                     need_gun -= cnt
                 }
-                if(Player.openInventory().getSlot(re).getItemId() == "minecraft:paper" && need_paper > 0){
+                if((Player.openInventory().getSlot(re).getItemId() == "minecraft:paper" || Player.openInventory().getSlot(re).getItemId() == "minecraft:sugar_cane") && need_paper > 0){
                     cnt = Player.openInventory().getSlot(re).getCount()
                     Player.openInventory().quick(re)
                     need_paper -= cnt
